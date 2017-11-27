@@ -3,6 +3,42 @@
 
 @import "{{ site.theme }}";
 
+// Website Variables
+$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-size:   18px;
+$base-font-weight: 400;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.5;
+
+$spacing-unit:     30px;
+
+$primary:          #0057b8;
+$light:            #fff;
+$dark:             #003;
+
+$light-bg:         #fafafa;
+
+$danger:           #e4002b;
+
+$text-color:       #111;
+
+$border-color:     #e0e0e0;
+
+$grey-color:       #636c72;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+$facebook:         #3b5998;
+$twitter:          #00aced;
+
+
+.bg-primary {
+    background-color: $primary!important;
+}
+
+.site-header {
+    border: none;
+}
 .hero-image {
     width: 100%;
     background-repeat: no-repeat;
@@ -19,8 +55,89 @@
         h1 {
             color: white;
             font-weight: bold;
-            font-size: 72px;
-            line-height: 85px;
         }
+    }
+}
+
+// TYPE
+
+.navbar-brand {
+    letter-spacing: .5px;
+}
+
+.navbar-brand, .navbar .btn, h5, .h5, h1 {
+    font-weight: 800;
+}
+
+h2, h3, h4 {
+    font-weight: 600;
+}
+
+h1, h2, h3, h4, h5.title, .navbar-brand {
+    font-family: 'Work Sans', sans-serif;
+}
+
+h1, .h1 {
+    font-size: $base-font-size * 4;
+    line-height: 85px;
+}
+
+h2, .h2 {
+    font-size: $base-font-size * 2.66;
+    line-height: $base-line-height * 1.075;
+    font-weight: 600;
+}
+
+h2 i.material-icons {
+    vertical-align: middle;
+    font-weight: 100;
+}
+
+h3, .h3 {
+    line-height: $base-line-height * .8;
+}
+
+h4, .h4 {
+    font-size: 1.35rem
+}
+
+h5, .h5 {
+    line-height: $base-line-height * .85;
+}
+
+p, h5 {
+    font-size: $base-font-size * .85;
+}
+
+.post-meta {
+    color: $grey-color-dark;
+}
+
+@media (max-width: 758px) {
+    
+    h1 {
+        font-size: $base-font-size * 1.5;
+        line-height: 37px;
+    }
+    
+    h2 {
+        font-size: $base-font-size * 1.375;
+    }
+    
+    h3 {
+        font-size: $base-font-size * 1.25;
+    }
+    
+    h4 {
+        font-size: $base-font-size;
+        line-height: 1.5rem;
+    }
+    
+    h5, p {
+        font-size: $base-font-size *.9;
+    }
+
+    .card-title {
+        margin-bottom: 0;
     }
 }
