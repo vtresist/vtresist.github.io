@@ -1,3 +1,19 @@
 ---
 layout: default
 ---
+
+<div class="hero-image" style="background-image: url('{{ page.hero.image | absolute_url }}')">
+    <div class="hero-cover container-fluid h-100">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12 hero-text">
+                    <h1>{{ page.hero.title }}</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content container">
+    {{ content }}
+</div>

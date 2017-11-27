@@ -1,0 +1,26 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+.hero-image {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+
+    .hero-cover {
+        padding-top: 25px;
+        padding-bottom: 25px;
+        background-color: rgba(0.7, 0.7, 0.7, 0.65);
+    }
+
+    .hero-text {
+        h1 {
+            color: white;
+            font-weight: bold;
+            font-size: 72px;
+            line-height: 85px;
+        }
+    }
+}
