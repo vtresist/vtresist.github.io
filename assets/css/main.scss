@@ -36,6 +36,14 @@ $twitter:          #00aced;
     background-color: $primary!important;
 }
 
+.badge-primary {
+    background-color: $primary!important;
+}
+
+.badge-danger {
+    background-color: $danger!important;
+}
+
 .site-header {
     border: none;
 }
@@ -57,6 +65,22 @@ $twitter:          #00aced;
             font-weight: bold;
         }
     }
+}
+
+.thumb-wrap {
+    display: block;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+}
+
+.badges {
+    display: inline;
+}
+
+.post-link {
+    display: inline;
 }
 
 // TYPE

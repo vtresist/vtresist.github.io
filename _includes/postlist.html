@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="{% if post.main_image %}col-12 col-sm-10{% else %}col-12{% endif %}">
+        {% if post.categories contains 'action' or post.categories contains 'success' or post.categories contains 'event' %}
+        {% assign has_special_category = true %}
+        {% else %}
+        {% assign has_special_category = false %}
+        {% endif %}
+        <h3>
+            <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a> 
+            {% if has_special_category %}{% include specialpin.html %}{% endif %}
+        </h3>
+        <p class="post-body">{{ post.content | strip_html | truncate: 140 }}</p>
+    </div>
+    {% if post.main_image %}
+    <div class="col-2 d-none d-sm-block">
+        <a class="thumb-wrap img-thumbnail" href="{{ post.url | relative_url }}" style="background-image: url('{{ post.main_image | absolute_url }}');"></a>
+    </div>
+    {% endif %}
+</div>

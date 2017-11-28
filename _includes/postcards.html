@@ -1,0 +1,21 @@
+{% if post.categories contains 'action' or post.categories contains 'success' or post.categories contains 'event' %}
+{% assign has_special_category = true %}
+{% else %}
+{% assign has_special_category = false %}
+{% endif %}
+
+<div class="card" style="">
+    {% if post.main_image %}
+    <img class="card-img-top" src="{{ post.main_image | absolute_url }}" alt="Card image cap">
+    {% endif %}
+    <div class="card-body">
+        <h3 class="card-title"> 
+            <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a> 
+            {% if has_special_category %}{% include categorybadge.html %}{% endif %}
+        </h3>
+        <p class="card-text">{{ post.content | strip_html | truncate: 140 }}</p>
+    </div>
+    <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+    </div>
+</div>

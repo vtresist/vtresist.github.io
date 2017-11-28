@@ -1,23 +1,25 @@
 <header class="site-header" role="banner">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                {% assign sorted_pages = site.pages | sort:"position"%}
-                {% for site_page in sorted_pages %}
-                    {% if site_page.title %}
-                    <li class="nav-item {% if page.url == site_page.url %}active{% endif %}">
-                        <a class="nav-link" href="{{ site_page.url | relative_url }}">
-                            {{ site_page.title | escape}}
-                            {% if page.url == site_page.url%}<span class="sr-only">(current)</span>{% endif %}
-                        </a>
-                    </li>
-                    {% endif %}
-                {% endfor %}
-            </ul>
+        <div class="container">
+            <a class="navbar-brand" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    {% assign sorted_pages = site.pages | sort:"position"%}
+                    {% for site_page in sorted_pages %}
+                        {% if site_page.title %}
+                        <li class="nav-item {% if page.url == site_page.url %}active{% endif %}">
+                            <a class="nav-link" href="{{ site_page.url | relative_url }}">
+                                {{ site_page.title | escape}}
+                                {% if page.url == site_page.url%}<span class="sr-only">(current)</span>{% endif %}
+                            </a>
+                        </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
         </div>
     </nav>
 </header>

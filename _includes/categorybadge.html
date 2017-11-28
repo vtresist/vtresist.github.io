@@ -1,0 +1,19 @@
+<div class="container badges">
+    {% if post.categories contains 'action' %}
+    <span class="badge badge-danger badge-category">
+        Act Now!
+    </span>
+    {% endif %}
+    
+    {% if post.categories contains 'event' %}
+    <span class="badge badge-primary badge-category">
+        RSVP
+    </span>
+    {% endif %}
+    
+    {% if post.categories contains 'success' %}
+    <span class="badge badge-success badge-category">
+        Success!
+    </span>
+    {% endif %}
+</div>
