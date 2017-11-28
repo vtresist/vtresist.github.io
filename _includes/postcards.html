@@ -16,6 +16,9 @@
         <p class="card-text">{{ post.content | strip_html | truncate: 140 }}</p>
     </div>
     <div class="card-footer">
-        <small class="text-muted">Last updated 3 mins ago</small>
+        <small class="text-muted">
+        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+        Posted {{ post.date | date: date_format }}
+        </small>
     </div>
 </div>
