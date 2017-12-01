@@ -2,6 +2,9 @@
 title: VtResist
 timezone: UTC
 collections:
+  contacts:
+    title: Contacts
+    output: true
   posts:
     title: Posts
     output: true
