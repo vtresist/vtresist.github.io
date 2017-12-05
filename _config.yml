@@ -12,10 +12,11 @@ collections:
     title: Uploads
     output: true
 defaults:
-  - scope:
-      type: contacts
-    values:
-      layout: contact
+- scope:
+    path: ''
+    type: contacts
+  values:
+    layout: contact
 email: resistancevermont@gmail.com
 description: Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for Google search
