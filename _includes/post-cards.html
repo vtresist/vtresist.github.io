@@ -11,7 +11,7 @@
     <div class="card-body">
         <h3 class="card-title"> 
             <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a> 
-            {% if has_special_category %}{% include categorybadge.html %}{% endif %}
+            {% if has_special_category %}{% include category-badge.html %}{% endif %}
         </h3>
         <p class="card-text">{{ post.content | strip_html | truncate: 140 }}</p>
     </div>
