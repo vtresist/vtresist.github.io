@@ -2,8 +2,35 @@
 layout: page
 ---
 
-<div class="">
-{% for contact in site.contacts %}
-    {% include contact-list.html %}
-{% endfor %}
+<div>
+    {% comment %}
+        Displays contacts grouped by category, both the categories and the contacts
+        are listed in alphabetic order. Displays uncategorized contacts at the end.
+    {% endcomment %}
+
+    {% assign contacts_by_category = site.contacts | group_by: "category" | sort: "name" %}
+    
+    {% if contacts_by_category.first.name == "" %}
+        {% assign misc_contacts = contacts_by_category.first %}
+        {% assign sorted_misc_contacts = misc_contacts.items | sort: "title" %}
+        {% assign size = contacts_by_category.size | minus: 1 %}
+        {% assign contacts_by_category = contacts_by_category | slice: 1,size %}
+    {% endif %}
+    
+    {% for category in contacts_by_category %}
+        <h2>{{ category.name }}</h2>
+        {% assign sorted_contacts = category.items | sort: "title" %}
+        {% for contact in sorted_contacts %}
+            {% include contact-list.html %}
+        {% endfor %}
+    {% endfor %}
+    
+    {% if sorted_misc_contacts %}
+        <br />
+        <hr />
+        <br />
+    {% endif %}
+    {% for contact in sorted_misc_contacts %}
+        {% include contact-list.html %}
+    {% endfor %}
 </div>
