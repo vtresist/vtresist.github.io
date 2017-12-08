@@ -58,6 +58,10 @@ body {
     border: none;
 }
 
+nav {
+    z-index: 1;
+}
+
 .content {
     margin-top: 1rem;
     flex: 1;
