@@ -1,4 +1,42 @@
+<footer class="text-white bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <h4>{{ site.title | upcase }}</h4>
+                <hr class="mr-auto accent" />
+                <p>{{ site.tagline }}</p>
+            </div>
+            <div class="col-4">
+                <h4>ABOUT {{ site.title | upcase }}</h4>
+                <hr class="mr-auto accent"/>
+                <p>{{ site.description }}</p>
+            </div>
+            <div class="col-4">
+                <h4>CONTACT</h4>
+                <hr class="mr-auto accent" />
+                <p>
+                    <a href="mailto:{{ site.email }}">
+                        <span class="icon-badge fa-stack fa-lg">
+                            <i class="icon-bg fa fa-circle fa-stack-2x"></i>
+                            <i class="icon fa fa-envelope-o fa-stack-1x"></i>
+                        </span>
+                        {{ site.email }}
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="row copyright">
+            <p><i class="fa fa-copyright" aria-hidden="true"></i> #yyyy, {{ site.title }}</p>
+        </div>
+    </div>
+</footer>
+
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 <script src="https://use.fontawesome.com/adcdc670cd.js"></script>
+<script>
+    var copyright = $('.copyright p');
+    var html = copyright.html();
+    $(copyright).html(html.replace('#yyyy', new Date().getFullYear()));
+</script>

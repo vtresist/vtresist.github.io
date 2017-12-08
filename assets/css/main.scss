@@ -52,6 +52,11 @@ main {
     margin-top: 30px;
 }
 
+footer {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
 .hero-image {
     width: 100%;
     background-repeat: no-repeat;
@@ -102,6 +107,25 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+a {
+    color: $primary;
+}
+
+hr.accent {
+    width: 50%;
+    margin-bottom: 1rem;
+    border-top: 1px solid $primary;
+}
+
+.icon-badge {
+    .icon {
+        color: white;
+    }
+    .icon-bg {
+        color: $primary;
+    }
 }
 
 // TYPE
